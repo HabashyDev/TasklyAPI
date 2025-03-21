@@ -1,4 +1,8 @@
-
+using Microsoft.EntityFrameworkCore;
+using Taskly.Core.Models;
+using Taskly.Core.Repositories;
+using Taskly.EF;
+using Taskly.EF.Repositories;
 namespace TasklyAPI
 {
     public class Program
@@ -9,7 +13,19 @@ namespace TasklyAPI
 
             // Add services to the container.
 
+
+
             builder.Services.AddControllers();
+
+
+            builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+
+            builder.Services.AddDbContext<AppDBContext>(options => options
+            .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
+            , b => b.MigrationsAssembly(typeof(AppDBContext).Assembly.FullName)));
+
+           
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

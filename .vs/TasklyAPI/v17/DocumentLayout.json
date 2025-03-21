@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\models\\tasktodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\models\\tasktodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +27,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Taskly.Core\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\AppUser.cs",
+              "RelativeToolTip": "Taskly.Core\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T04:24:49.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TaskTodo.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\TaskTodo.cs",
+              "RelativeDocumentMoniker": "Taskly.Core\\Models\\TaskTodo.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\TaskTodo.cs",
+              "RelativeToolTip": "Taskly.Core\\Models\\TaskTodo.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T04:17:02.181Z",
+              "EditorCaption": ""
             }
           ]
         }

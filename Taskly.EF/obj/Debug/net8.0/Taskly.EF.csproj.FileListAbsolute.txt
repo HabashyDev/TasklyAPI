@@ -1,0 +1,16 @@
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\bin\Debug\net8.0\Taskly.EF.deps.json
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\bin\Debug\net8.0\Taskly.EF.dll
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\bin\Debug\net8.0\Taskly.EF.pdb
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.csproj.AssemblyReference.cache
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.AssemblyInfoInputs.cache
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.AssemblyInfo.cs
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.csproj.CoreCompileInputs.cache
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.sourcelink.json
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.dll
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\refint\Taskly.EF.dll
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.pdb
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\ref\Taskly.EF.dll
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\bin\Debug\net8.0\Taskly.Core.dll
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\bin\Debug\net8.0\Taskly.Core.pdb
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.EF\obj\Debug\net8.0\Taskly.EF.csproj.Up2Date

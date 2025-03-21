@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "TasklyAPI.Controllers.TasksController",
+    "Method": "CreateTask",
+    "RelativePath": "api/Tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TaskToCreate",
+        "Type": "Taskly.Core.DTOs.TaskDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasklyAPI.Controllers.TasksController",
+    "Method": "DeleteTask",
+    "RelativePath": "api/Tasks/DeleteTaskById {id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasklyAPI.Controllers.TasksController",
+    "Method": "GetAllTasks",
+    "RelativePath": "api/Tasks/getAllTasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasklyAPI.Controllers.TasksController",
+    "Method": "GetTaskById",
+    "RelativePath": "api/Tasks/getTaskById{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
