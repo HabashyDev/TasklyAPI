@@ -16,14 +16,14 @@ namespace Taskly.EF.Repositories
         public void Create(T TaskTodo)
         {
             Context.Set<T>().Add(TaskTodo);
-            Context.SaveChanges(); 
+             
         }
 
         public T DeleteById(Expression<Func<T, bool>> predicate)
         {
             var itemToDelete  =Context.Set<T>().SingleOrDefault(predicate);
             Context.Set<T>().Remove(itemToDelete);
-            Context.SaveChanges();
+            
             return (itemToDelete);
         }
 

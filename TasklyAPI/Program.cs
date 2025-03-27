@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Taskly.Core;
 using Taskly.Core.Models;
 using Taskly.Core.Repositories;
 using Taskly.EF;
@@ -18,7 +19,7 @@ namespace TasklyAPI
             builder.Services.AddControllers();
 
 
-            builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             builder.Services.AddDbContext<AppDBContext>(options => options
             .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")

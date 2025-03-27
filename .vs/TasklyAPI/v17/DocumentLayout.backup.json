@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\models\\tasktodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\models\\tasktodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.ef\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|solutionrelative:taskly.ef\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.ef\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|solutionrelative:taskly.ef\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +42,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Repositories\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "Taskly.EF\\Repositories\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Repositories\\BaseRepository.cs",
+              "RelativeToolTip": "Taskly.EF\\Repositories\\BaseRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wCcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:15:59.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TaskTodo.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\TaskTodo.cs",
-              "RelativeDocumentMoniker": "Taskly.Core\\Models\\TaskTodo.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\TaskTodo.cs",
-              "RelativeToolTip": "Taskly.Core\\Models\\TaskTodo.cs",
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "TasklyAPI\\Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "TasklyAPI\\Controllers\\TasksController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:12:50.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Program.cs",
+              "RelativeDocumentMoniker": "TasklyAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Program.cs",
+              "RelativeToolTip": "TasklyAPI\\Program.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABUAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:11:01.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Taskly.EF\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\UnitOfWork.cs",
+              "RelativeToolTip": "Taskly.EF\\UnitOfWork.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T13:02:50.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Taskly.Core\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\IUnitOfWork.cs",
+              "RelativeToolTip": "Taskly.Core\\IUnitOfWork.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T04:17:02.181Z",
+              "WhenOpened": "2025-03-27T13:01:43.287Z",
               "EditorCaption": ""
             }
           ]

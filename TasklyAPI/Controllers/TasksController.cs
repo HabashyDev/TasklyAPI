@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Taskly.Core;
 using Taskly.Core.DTOs;
 using Taskly.Core.Models;
 using Taskly.Core.Repositories;
@@ -12,12 +13,11 @@ namespace TasklyAPI.Controllers
     [ApiController]
     public class TasksController : ControllerBase
     {
-        private readonly IBaseRepository<TaskTodo> TasksRepository;
-        public TasksController(IBaseRepository<TaskTodo> _TasksRepository)
+        private readonly IUnitOfWork unitOfWork;
+        public TasksController(IUnitOfWork _unitOfWork)
         {
-            TasksRepository = _TasksRepository;
+            unitOfWork = _unitOfWork;
         }
-
         [HttpPost]
         public IActionResult CreateTask(TaskDTO TaskToCreate)
         {
@@ -27,26 +27,29 @@ namespace TasklyAPI.Controllers
                 Description = TaskToCreate.TaskDescription,
                 DeadLine = TaskToCreate.TaskDeadLine,
             };
-            TasksRepository.Create(Task);
+            unitOfWork.TasksToDo.Create(Task);
+            unitOfWork.complete();
             return Created();
         }
 
         [HttpGet("getAllTasks")]
         public IActionResult GetAllTasks()
         {
-            return Ok(TasksRepository.getAll());
+            return Ok(unitOfWork.TasksToDo.getAll());
         }
 
         [HttpDelete("DeleteTaskById {id:int}")]
         public IActionResult DeleteTask(int id)
         {
-            return Ok(TasksRepository.DeleteById(T=>T.Id == id));
+            unitOfWork.TasksToDo.DeleteById(T => T.Id == id);
+            unitOfWork.complete();
+            return Ok();
         }
 
         [HttpGet("getTaskById{id:int}")]
         public IActionResult GetTaskById(int id)
         {
-            return Ok(TasksRepository.GetById(T => T.Id == id));
+            return Ok(unitOfWork.TasksToDo.GetById(T => T.Id == id));
         }
        
         
