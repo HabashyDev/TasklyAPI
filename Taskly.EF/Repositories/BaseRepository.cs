@@ -39,7 +39,10 @@ namespace Taskly.EF.Repositories
 
         public T Update(T entity)
         {
-            throw new NotImplementedException();
+            Context.Set<T>().Update(entity);
+            return entity;
         }
+
+        
     }
 }

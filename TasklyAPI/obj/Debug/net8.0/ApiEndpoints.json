@@ -17,6 +17,22 @@
   },
   {
     "ContainingType": "TasklyAPI.Controllers.TasksController",
+    "Method": "UpdateTask",
+    "RelativePath": "api/Tasks",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Taskly.Core.Models.TaskTodo",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasklyAPI.Controllers.TasksController",
     "Method": "DeleteTask",
     "RelativePath": "api/Tasks/DeleteTaskById {id}",
     "HttpMethod": "DELETE",

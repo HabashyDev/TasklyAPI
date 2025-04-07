@@ -1,8 +1,11 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Taskly.Core;
 using Taskly.Core.Models;
 using Taskly.Core.Repositories;
 using Taskly.EF;
+using System.Text;
 using Taskly.EF.Repositories;
 namespace TasklyAPI
 {
@@ -25,7 +28,24 @@ namespace TasklyAPI
             .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
             , b => b.MigrationsAssembly(typeof(AppDBContext).Assembly.FullName)));
 
-           
+            var JwtOptions = builder.Configuration.GetSection("Jwt").Get<TokenOptions>();
+            builder.Services.AddSingleton(JwtOptions);
+
+
+            builder.Services.AddAuthentication().AddJwtBearer(JwtBearerDefaults.AuthenticationScheme
+                , options =>
+                {
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = JwtOptions.Issuer,
+                        ValidateAudience = true,
+                        ValidAudience = JwtOptions.Audiance,
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtOptions.SigningKey))
+                    };
+                });
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Taskly.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efdfd0656301f6d06ed5e5f39b68d3040e41bccd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f25ce26acf6544c633fbe1ab536a1e0137fc1aec")]
 [assembly: System.Reflection.AssemblyProductAttribute("Taskly.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Taskly.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

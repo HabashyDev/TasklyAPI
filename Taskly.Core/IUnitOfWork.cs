@@ -11,6 +11,7 @@ namespace Taskly.Core
     public interface IUnitOfWork :IDisposable
     {
         IBaseRepository<TaskTodo> TasksToDo { get; }
+        IBaseRepository<AppUser> AppUsers { get; }
 
         void complete();
     }

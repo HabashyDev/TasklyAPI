@@ -21,6 +21,7 @@ namespace Taskly.EF
         }
 
         public IBaseRepository<TaskTodo> TasksToDo { get; private set; }
+        public IBaseRepository<AppUser> AppUsers { get; private set; }
 
         public void complete()
         {

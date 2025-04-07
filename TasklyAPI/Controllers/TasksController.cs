@@ -38,6 +38,14 @@ namespace TasklyAPI.Controllers
             return Ok(unitOfWork.TasksToDo.getAll());
         }
 
+        [HttpPut]
+        public IActionResult UpdateTask(TaskTodo request)
+        {
+            var UpdatedTask = unitOfWork.TasksToDo.Update(request);
+            unitOfWork.complete();
+            return Ok(UpdatedTask);
+        }
+
         [HttpDelete("DeleteTaskById {id:int}")]
         public IActionResult DeleteTask(int id)
         {
