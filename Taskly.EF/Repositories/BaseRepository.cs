@@ -27,6 +27,11 @@ namespace Taskly.EF.Repositories
             return (itemToDelete);
         }
 
+        public T Find(Expression<Func<T, bool>> predicate)
+        {
+            return Context.Set<T>().SingleOrDefault(predicate);
+        }
+
         public IEnumerable<T> getAll()
         {
             return (Context.Set<T>().ToArray());

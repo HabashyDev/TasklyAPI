@@ -24,13 +24,15 @@ namespace TasklyAPI
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+
             builder.Services.AddDbContext<AppDBContext>(options => options
             .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
             , b => b.MigrationsAssembly(typeof(AppDBContext).Assembly.FullName)));
 
-            var JwtOptions = builder.Configuration.GetSection("Jwt").Get<TokenOptions>();
-            builder.Services.AddSingleton(JwtOptions);
+            var JwtOptions = builder.Configuration.GetSection("Jwt").Get<JwtOptions>();
 
+
+            
 
             builder.Services.AddAuthentication().AddJwtBearer(JwtBearerDefaults.AuthenticationScheme
                 , options =>
@@ -46,6 +48,7 @@ namespace TasklyAPI
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtOptions.SigningKey))
                     };
                 });
+            builder.Services.AddSingleton(JwtOptions);
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

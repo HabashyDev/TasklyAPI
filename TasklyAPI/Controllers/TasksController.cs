@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Taskly.Core;
@@ -33,6 +34,7 @@ namespace TasklyAPI.Controllers
         }
 
         [HttpGet("getAllTasks")]
+        [Authorize]
         public IActionResult GetAllTasks()
         {
             return Ok(unitOfWork.TasksToDo.getAll());

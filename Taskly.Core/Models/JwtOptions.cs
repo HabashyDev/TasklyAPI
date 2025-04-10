@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Taskly.Core.Models
 {
-    public class TokenOptions
+    public class JwtOptions
     {
         public string Issuer { get; set; }
         public string Audiance { get; set; }

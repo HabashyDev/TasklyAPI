@@ -14,5 +14,6 @@ namespace Taskly.Core.Repositories
         T Update(T entity);
         T DeleteById(Expression<Func<T, bool>> predicate);
         T GetById(Expression<Func<T, bool>> predicate);
+        T Find(Expression<Func<T, bool>> predicate);
     }
 }
