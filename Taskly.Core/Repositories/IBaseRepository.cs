@@ -15,5 +15,6 @@ namespace Taskly.Core.Repositories
         T DeleteById(Expression<Func<T, bool>> predicate);
         T GetById(Expression<Func<T, bool>> predicate);
         T Find(Expression<Func<T, bool>> predicate);
+        bool include (Expression<Func<T, bool>> predicate);
     }
 }

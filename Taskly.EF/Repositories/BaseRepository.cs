@@ -42,6 +42,11 @@ namespace Taskly.EF.Repositories
             return (Context.Set<T>().SingleOrDefault(predicate));
         }
 
+        public bool include(Expression<Func<T, bool>> predicate)
+        {
+            return Context.Set<T>().Any<T>(predicate);
+        }
+
         public T Update(T entity)
         {
             Context.Set<T>().Update(entity);

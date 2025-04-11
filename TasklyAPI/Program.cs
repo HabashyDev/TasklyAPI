@@ -1,12 +1,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using Taskly.Core;
 using Taskly.Core.Models;
-using Taskly.Core.Repositories;
 using Taskly.EF;
-using System.Text;
-using Taskly.EF.Repositories;
 namespace TasklyAPI
 {
     public class Program
@@ -32,7 +30,7 @@ namespace TasklyAPI
             var JwtOptions = builder.Configuration.GetSection("Jwt").Get<JwtOptions>();
 
 
-            
+
 
             builder.Services.AddAuthentication().AddJwtBearer(JwtBearerDefaults.AuthenticationScheme
                 , options =>

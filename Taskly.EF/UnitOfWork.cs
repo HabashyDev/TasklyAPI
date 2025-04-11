@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Taskly.Core;
+﻿using Taskly.Core;
 using Taskly.Core.Models;
 using Taskly.Core.Repositories;
 using Taskly.EF.Repositories;
@@ -26,7 +21,7 @@ namespace Taskly.EF
 
         public void complete()
         {
-             _Context.SaveChanges();
+            _Context.SaveChanges();
         }
 
         public void Dispose()

@@ -1,33 +1,28 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Taskly.Core.Models;
-using Taskly.Core.DTOs;
-using Microsoft.AspNetCore.Identity;
-using Taskly.Core;
-using Taskly.EF;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using System.Text;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Reflection.Metadata.Ecma335;
-using Microsoft.AspNetCore.Mvc.Formatters;
+using System.Text;
+using Taskly.Core;
+using Taskly.Core.DTOs;
+using Taskly.Core.Models;
 
 namespace TasklyAPI.Controllers
 {
-    
+
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController: ControllerBase
+    public class AuthController : ControllerBase
     {
 
         public AppUser user;
         private readonly IUnitOfWork unitOfWork;
-        private readonly  JwtOptions jwtOptions;
-        
+        private readonly JwtOptions jwtOptions;
 
 
-        public AuthController(IUnitOfWork _unitOfWork ,JwtOptions _jwtOptions  )
+
+        public AuthController(IUnitOfWork _unitOfWork, JwtOptions _jwtOptions)
         {
             unitOfWork = _unitOfWork;
             jwtOptions = _jwtOptions;
@@ -42,25 +37,34 @@ namespace TasklyAPI.Controllers
         [HttpPost("Register")]
         public IActionResult Register(AppUserDto request)
         {
-            var HashedPassword = new PasswordHasher<AppUser>()
-                .HashPassword(user, request.password);
-
-            var UserToRegister = new AppUser()
+            if (unitOfWork.AppUsers.include(U => U.UserName == request.username))
             {
-                UserName = request.username,
-                PasswordHash = HashedPassword
-            };
-            unitOfWork.AppUsers.Create(UserToRegister);
-            unitOfWork.complete();
+                return BadRequest("username Exist");
+            }
+            else
+            {
+                var HashedPassword = new PasswordHasher<AppUser>()
+                    .HashPassword(user, request.password);
 
-            return Created();
+                var UserToRegister = new AppUser()
+                {
+                    UserName = request.username,
+                    PasswordHash = HashedPassword,
+                    Role = request.role,
+
+                };
+                unitOfWork.AppUsers.Create(UserToRegister);
+                unitOfWork.complete();
+
+                return Created();
+            }
         }
 
         [HttpPost("login")]
-        public IActionResult Login(AppUserDto request) 
+        public IActionResult Login(AppUserDto request)
         {
             var UserFromDb = unitOfWork.AppUsers.Find(user => user.UserName == request.username);
-            if(UserFromDb == null)
+            if (UserFromDb == null)
             {
                 return BadRequest("Username or Password is Not Correct");
             }
@@ -80,7 +84,8 @@ namespace TasklyAPI.Controllers
                     , SecurityAlgorithms.HmacSha256),
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                    new(ClaimTypes.NameIdentifier , request.username)
+                    new(ClaimTypes.NameIdentifier , request.username),
+                    new(ClaimTypes.Role,request.role)
 
                     })
 
@@ -91,6 +96,6 @@ namespace TasklyAPI.Controllers
                 return Ok(accessToken);
             }
         }
-        
+
     }
 }

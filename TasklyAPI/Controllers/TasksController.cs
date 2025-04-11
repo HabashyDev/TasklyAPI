@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Taskly.Core;
 using Taskly.Core.DTOs;
 using Taskly.Core.Models;
-using Taskly.Core.Repositories;
-using Taskly.EF.Repositories;
 
 namespace TasklyAPI.Controllers
 {
@@ -22,6 +18,7 @@ namespace TasklyAPI.Controllers
         [HttpPost]
         public IActionResult CreateTask(TaskDTO TaskToCreate)
         {
+            
             TaskTodo Task = new()
             {
                 Title = TaskToCreate.TaskTitle,
@@ -34,11 +31,13 @@ namespace TasklyAPI.Controllers
         }
 
         [HttpGet("getAllTasks")]
-        [Authorize]
+        [Authorize(Roles ="user")]
         public IActionResult GetAllTasks()
         {
+           
             return Ok(unitOfWork.TasksToDo.getAll());
         }
+
 
         [HttpPut]
         public IActionResult UpdateTask(TaskTodo request)
@@ -61,7 +60,7 @@ namespace TasklyAPI.Controllers
         {
             return Ok(unitOfWork.TasksToDo.GetById(T => T.Id == id));
         }
-       
-        
+
+
     }
 }
