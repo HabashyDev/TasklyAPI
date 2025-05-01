@@ -13,11 +13,9 @@ namespace Taskly.EF
             _Context = Context;
 
             TasksToDo = new BaseRepository<TaskTodo>(_Context);
-            AppUsers = new BaseRepository<AppUser>(_Context);
         }
 
         public IBaseRepository<TaskTodo> TasksToDo { get; private set; }
-        public IBaseRepository<AppUser> AppUsers { get; private set; }
 
         public void complete()
         {

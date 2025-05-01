@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Taskly.Core;
 using Taskly.Core.DTOs;
+using Taskly.Core.Enums;
 using Taskly.Core.Models;
+
 
 namespace TasklyAPI.Controllers
 {
@@ -10,55 +12,72 @@ namespace TasklyAPI.Controllers
     [ApiController]
     public class TasksController : ControllerBase
     {
-        private readonly IUnitOfWork unitOfWork;
-        public TasksController(IUnitOfWork _unitOfWork)
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public TasksController(IUnitOfWork unitOfWork , IHttpContextAccessor httpContextAccessor)
         {
-            unitOfWork = _unitOfWork;
+            _unitOfWork = unitOfWork;
+            _httpContextAccessor = httpContextAccessor;
         }
-        [HttpPost]
-        public IActionResult CreateTask(TaskDTO TaskToCreate)
+        [HttpPost("CreateTask")]
+        [Authorize]
+        public IActionResult CreateTask(TaskDTO Request)
         {
-            
+            var CurrentUser = _httpContextAccessor.HttpContext?.User;
             TaskTodo Task = new()
             {
-                Title = TaskToCreate.TaskTitle,
-                Description = TaskToCreate.TaskDescription,
-                DeadLine = TaskToCreate.TaskDeadLine,
+                Title = Request.TaskTitle,
+                Description = Request.TaskDescription,
+                DeadLine = Request.TaskDeadLine,
+                ownerId = CurrentUser.FindFirst("AppUserId").Value,
+                Status = Request.TaskStatus
+                
             };
-            unitOfWork.TasksToDo.Create(Task);
-            unitOfWork.complete();
+            _unitOfWork.TasksToDo.Create(Task);
+            _unitOfWork.complete();
             return Created();
         }
 
         [HttpGet("getAllTasks")]
-        [Authorize(Roles ="user")]
         public IActionResult GetAllTasks()
         {
-           
-            return Ok(unitOfWork.TasksToDo.getAll());
+            var CurrentUser = _httpContextAccessor.HttpContext?.User;
+            var AllUserTasks = _unitOfWork.TasksToDo.getAll();
+                //.Where(T => T.ownerId == CurrentUser.FindFirst("AppUserId").Value);
+            return Ok(AllUserTasks);
         }
 
 
-        [HttpPut]
+        [HttpPut("UpdateTask")]
+        [Authorize]
         public IActionResult UpdateTask(TaskTodo request)
         {
-            var UpdatedTask = unitOfWork.TasksToDo.Update(request);
-            unitOfWork.complete();
+            var UpdatedTask = _unitOfWork.TasksToDo.Update(request);
+            _unitOfWork.complete();
             return Ok(UpdatedTask);
         }
 
         [HttpDelete("DeleteTaskById {id:int}")]
+        [Authorize]
         public IActionResult DeleteTask(int id)
         {
-            unitOfWork.TasksToDo.DeleteById(T => T.Id == id);
-            unitOfWork.complete();
+            _unitOfWork.TasksToDo.DeleteById(T => T.Id == id);
+            _unitOfWork.complete();
             return Ok();
         }
 
-        [HttpGet("getTaskById{id:int}")]
-        public IActionResult GetTaskById(int id)
+        [HttpGet("getTaskByStatus")]
+        [Authorize]
+        public IActionResult GetTaskById(TaskTodoStaus Status)
         {
-            return Ok(unitOfWork.TasksToDo.GetById(T => T.Id == id));
+            var CurrentUser = _httpContextAccessor.HttpContext?.User;
+
+            var userTasks = _unitOfWork.TasksToDo.getAll().Where(T => T.ownerId == CurrentUser.FindFirst("AppUserId").Value);
+
+            var Response = userTasks.Where(T => T.Status == Status);
+                            
+            
+            return Ok(Response);
         }
 
 

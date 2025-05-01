@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Linq.Expressions;
 using Taskly.Core.Repositories;
 
@@ -32,8 +33,18 @@ namespace Taskly.EF.Repositories
             return Context.Set<T>().SingleOrDefault(predicate);
         }
 
+        public async Task<IEnumerable<T>> FindAll(Expression<Func<T, bool>> predicate)
+        {
+            var Tasks = await Context.Set<T>().Where(predicate).ToArrayAsync();
+
+
+            return (Tasks);
+             
+        }
+
         public IEnumerable<T> getAll()
         {
+            
             return (Context.Set<T>().ToArray());
         }
 

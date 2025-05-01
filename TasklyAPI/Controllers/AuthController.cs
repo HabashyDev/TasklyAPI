@@ -4,7 +4,6 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Taskly.Core;
 using Taskly.Core.DTOs;
 using Taskly.Core.Models;
 
@@ -16,85 +15,95 @@ namespace TasklyAPI.Controllers
     public class AuthController : ControllerBase
     {
 
-        public AppUser user;
-        private readonly IUnitOfWork unitOfWork;
-        private readonly JwtOptions jwtOptions;
+        //public AppUser user;
+        //private readonly IUnitOfWork unitOfWork;
+
+        private readonly UserManager<AppUser> _userManger;
+        private readonly JwtOptions _jwtOptions;
+        private readonly SignInManager<AppUser> _signInManager;
 
 
-
-        public AuthController(IUnitOfWork _unitOfWork, JwtOptions _jwtOptions)
+        public AuthController(JwtOptions jwtOptions, UserManager<AppUser> userManager
+            , SignInManager<AppUser> signInManger)
         {
-            unitOfWork = _unitOfWork;
-            jwtOptions = _jwtOptions;
+            _jwtOptions = jwtOptions;
+            _userManger = userManager;
+            _signInManager = signInManger;
         }
 
-        [HttpGet]
+
+        [HttpGet("GetAllUsers")]
         public IActionResult getAllUsers()
         {
-            return Ok(unitOfWork.AppUsers.getAll());
+            return Ok(_userManger.Users.ToArray());
         }
 
         [HttpPost("Register")]
-        public IActionResult Register(AppUserDto request)
+        public async Task<IActionResult> Register(RegisterDto request)
         {
-            if (unitOfWork.AppUsers.include(U => U.UserName == request.username))
+
+
+            if (_userManger.Users.Any(U => U.UserName == request.username))
             {
                 return BadRequest("username Exist");
             }
-            else
+
+            var userToCreate = new AppUser
             {
-                var HashedPassword = new PasswordHasher<AppUser>()
-                    .HashPassword(user, request.password);
+                UserName = request.username,
+                Email = request.email
+            };
 
-                var UserToRegister = new AppUser()
-                {
-                    UserName = request.username,
-                    PasswordHash = HashedPassword,
-                    Role = request.role,
-
-                };
-                unitOfWork.AppUsers.Create(UserToRegister);
-                unitOfWork.complete();
-
+            var result = await _userManger.CreateAsync(userToCreate, request.password);
+            if (result.Succeeded)
+            {
                 return Created();
             }
+
+            foreach (var item in result.Errors)
+            {
+                ModelState.AddModelError("", item.Description);
+            }
+
+            return BadRequest(ModelState);
+
+
+
+
         }
 
         [HttpPost("login")]
-        public IActionResult Login(AppUserDto request)
+        public async Task<IActionResult> Login(LoginDTO request)
         {
-            var UserFromDb = unitOfWork.AppUsers.Find(user => user.UserName == request.username);
-            if (UserFromDb == null)
+
+            var user = await _userManger.FindByNameAsync(request.username);
+            Console.WriteLine(user);
+            if (user == null)
             {
-                return BadRequest("Username or Password is Not Correct");
+                return Unauthorized("user");
             }
-            if (new PasswordHasher<AppUser>()
-                 .VerifyHashedPassword(user, UserFromDb.PasswordHash, request.password) == PasswordVerificationResult.Failed)
-            {
-                return BadRequest("Username or Password is Not Correct");
-            }
-            else
+
+            var result = await _signInManager.CheckPasswordSignInAsync(user, request.password, false);
+            if (result.Succeeded)
             {
                 var tokenhandler = new JwtSecurityTokenHandler();
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    Issuer = jwtOptions.Issuer,
-                    Audience = jwtOptions.Audiance,
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.SigningKey))
+                    Issuer = _jwtOptions.Issuer,
+                    Audience = _jwtOptions.Audiance,
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SigningKey))
                     , SecurityAlgorithms.HmacSha256),
                     Subject = new ClaimsIdentity(new Claim[]
                     {
-                    new(ClaimTypes.NameIdentifier , request.username),
-                    new(ClaimTypes.Role,request.role)
-
-                    })
-
+                    new(ClaimTypes.NameIdentifier, request.username),
+                    new Claim("AppUserId", user.Id) })
                 };
                 var SecurityToken = tokenhandler.CreateToken(tokenDescriptor);
                 var accessToken = tokenhandler.WriteToken(SecurityToken);
 
                 return Ok(accessToken);
             }
+            return Unauthorized("password");
         }
 
     }

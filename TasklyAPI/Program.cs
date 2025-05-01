@@ -1,10 +1,9 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using Scalar.AspNetCore;
 using Taskly.Core;
 using Taskly.Core.Models;
 using Taskly.EF;
+using TasklyAPI.Extensions;
 namespace TasklyAPI
 {
     public class Program
@@ -19,52 +18,48 @@ namespace TasklyAPI
 
             builder.Services.AddControllers();
 
+            builder.Services.AddHttpContextAccessor();
 
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            builder.Services.ConfigureDbContext(builder.Configuration);
 
-            builder.Services.AddDbContext<AppDBContext>(options => options
-            .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")
-            , b => b.MigrationsAssembly(typeof(AppDBContext).Assembly.FullName)));
+            builder.Services.ConfigureIdentity();
 
-            var JwtOptions = builder.Configuration.GetSection("Jwt").Get<JwtOptions>();
+            builder.Services.ConfigureJWT(builder.Configuration);
 
+            builder.Services.ConfigureCors();
 
-
-
-            builder.Services.AddAuthentication().AddJwtBearer(JwtBearerDefaults.AuthenticationScheme
-                , options =>
-                {
-                    options.SaveToken = true;
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidIssuer = JwtOptions.Issuer,
-                        ValidateAudience = true,
-                        ValidAudience = JwtOptions.Audiance,
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtOptions.SigningKey))
-                    };
-                });
-            builder.Services.AddSingleton(JwtOptions);
-
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
+
             builder.Services.AddSwaggerGen();
+
+
+
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            app.UseSwagger(opt =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+                opt.RouteTemplate = "openapi/{documentName}.json";
+            });
+            app.MapScalarApiReference(opt =>
+            {
+                opt.Title = "Scalar Example";
+                opt.DefaultHttpClient = new(ScalarTarget.Http, ScalarClient.Http11);
+            });
+
+
+
+
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseCors("CORSPolicy");
 
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.MapControllers();
 

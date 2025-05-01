@@ -12,8 +12,8 @@ using Taskly.EF;
 namespace Taskly.EF.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250321104551_AddAuthentication")]
-    partial class AddAuthentication
+    [Migration("20250429021016_initial-authentication")]
+    partial class initialauthentication
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -207,7 +207,6 @@ namespace Taskly.EF.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -248,7 +247,13 @@ namespace Taskly.EF.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ownerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ownerId");
 
                     b.ToTable("TasksTodo");
                 });
@@ -302,6 +307,17 @@ namespace Taskly.EF.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Taskly.Core.Models.TaskTodo", b =>
+                {
+                    b.HasOne("Taskly.Core.Models.AppUser", "owner")
+                        .WithMany()
+                        .HasForeignKey("ownerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("owner");
                 });
 #pragma warning restore 612, 618
         }

@@ -197,10 +197,6 @@ namespace Taskly.EF.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -208,7 +204,6 @@ namespace Taskly.EF.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -249,9 +244,15 @@ namespace Taskly.EF.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ownerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("TasksTodo");
+                    b.HasIndex("ownerId");
+
+                    b.ToTable("TasksTodo", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -303,6 +304,17 @@ namespace Taskly.EF.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Taskly.Core.Models.TaskTodo", b =>
+                {
+                    b.HasOne("Taskly.Core.Models.AppUser", "owner")
+                        .WithMany()
+                        .HasForeignKey("ownerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("owner");
                 });
 #pragma warning restore 612, 618
         }

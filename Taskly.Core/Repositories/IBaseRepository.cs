@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Taskly.Core.Repositories
         T DeleteById(Expression<Func<T, bool>> predicate);
         T GetById(Expression<Func<T, bool>> predicate);
         T Find(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> FindAll(Expression<Func<T,bool>> predicate);
         bool include (Expression<Func<T, bool>> predicate);
     }
 }

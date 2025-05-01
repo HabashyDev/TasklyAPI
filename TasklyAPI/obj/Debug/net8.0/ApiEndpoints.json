@@ -2,7 +2,7 @@
   {
     "ContainingType": "TasklyAPI.Controllers.AuthController",
     "Method": "getAllUsers",
-    "RelativePath": "api/Auth",
+    "RelativePath": "api/Auth/GetAllUsers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Taskly.Core.DTOs.AppUserDto",
+        "Type": "Taskly.Core.DTOs.LoginDTO",
         "IsRequired": true
       }
     ],
@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Taskly.Core.DTOs.AppUserDto",
+        "Type": "Taskly.Core.DTOs.RegisterDto",
         "IsRequired": true
       }
     ],
@@ -44,30 +44,14 @@
   {
     "ContainingType": "TasklyAPI.Controllers.TasksController",
     "Method": "CreateTask",
-    "RelativePath": "api/Tasks",
+    "RelativePath": "api/Tasks/CreateTask",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "TaskToCreate",
+        "Name": "Request",
         "Type": "Taskly.Core.DTOs.TaskDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TasklyAPI.Controllers.TasksController",
-    "Method": "UpdateTask",
-    "RelativePath": "api/Tasks",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "Taskly.Core.Models.TaskTodo",
         "IsRequired": true
       }
     ],
@@ -102,14 +86,30 @@
   {
     "ContainingType": "TasklyAPI.Controllers.TasksController",
     "Method": "GetTaskById",
-    "RelativePath": "api/Tasks/getTaskById{id}",
+    "RelativePath": "api/Tasks/getTaskByStatus",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
-        "Type": "System.Int32",
+        "Name": "Status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TasklyAPI.Controllers.TasksController",
+    "Method": "UpdateTask",
+    "RelativePath": "api/Tasks/UpdateTask",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Taskly.Core.Models.TaskTodo",
         "IsRequired": true
       }
     ],

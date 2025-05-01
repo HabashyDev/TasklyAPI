@@ -12,7 +12,7 @@ namespace Taskly.Core.Models
         public string Audiance { get; set; }
         public int LifeTime { get; set; }
         public string SigningKey    { get; set; }
-
         public string Role {  get; set; }
+        public string AppUserId { get; set; }
     }
 }
