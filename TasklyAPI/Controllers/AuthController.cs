@@ -1,110 +1,79 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Taskly.Core;
 using Taskly.Core.DTOs;
 using Taskly.Core.Models;
+using TasklyAPI.Extensions;
 
 namespace TasklyAPI.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
     {
+        private readonly TokenProvider _tokenProvider;
+        private readonly SignInManager<AppUser> _signinManger;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IUnitOfWork _unitOfWork;
 
-        //public AppUser user;
-        //private readonly IUnitOfWork unitOfWork;
-
-        private readonly UserManager<AppUser> _userManger;
-        private readonly JwtOptions _jwtOptions;
-        private readonly SignInManager<AppUser> _signInManager;
-
-
-        public AuthController(JwtOptions jwtOptions, UserManager<AppUser> userManager
-            , SignInManager<AppUser> signInManger)
+        public AuthController(UserManager<AppUser> userManager, IUnitOfWork unitOfWork,
+            SignInManager<AppUser> signinManger, TokenProvider tokenprovider)
         {
-            _jwtOptions = jwtOptions;
-            _userManger = userManager;
-            _signInManager = signInManger;
-        }
-
-
-        [HttpGet("GetAllUsers")]
-        public IActionResult getAllUsers()
-        {
-            return Ok(_userManger.Users.ToArray());
+            _unitOfWork = unitOfWork;
+            _userManager = userManager;
+            _signinManger = signinManger;
+            _tokenProvider = tokenprovider;
         }
 
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDto request)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
+            var usernameExists = await _userManager.Users
+                .AnyAsync(u => u.UserName == request.UserName);
 
-            if (_userManger.Users.Any(U => U.UserName == request.username))
-            {
-                return BadRequest("username Exist");
-            }
+            if (usernameExists)
+                return BadRequest(new { error = "Username already exists." });
+
+            var emailExists = await _userManager.Users
+                .AnyAsync(u => u.Email == request.Email);
+
+            if (emailExists)
+                return BadRequest(new { error = "Email already in use." });
 
             var userToCreate = new AppUser
             {
-                UserName = request.username,
-                Email = request.email
+                UserName = request.UserName,
+                Email = request.Email
             };
 
-            var result = await _userManger.CreateAsync(userToCreate, request.password);
-            if (result.Succeeded)
-            {
-                return Created();
-            }
+            var result = await _userManager.CreateAsync(userToCreate, request.Password);
 
-            foreach (var item in result.Errors)
-            {
-                ModelState.AddModelError("", item.Description);
-            }
+            if (!result.Succeeded)
+                return BadRequest(new { errors = result.Errors.Select(e => e.Description) });
 
-            return BadRequest(ModelState);
-
-
-
-
+            return StatusCode(201); // 201 Created
         }
 
-        [HttpPost("login")]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDTO request)
         {
-
-            var user = await _userManger.FindByNameAsync(request.username);
+            var user = await _userManager.FindByNameAsync(request.username);
             Console.WriteLine(user);
             if (user == null)
             {
                 return Unauthorized("user");
             }
-
-            var result = await _signInManager.CheckPasswordSignInAsync(user, request.password, false);
+            var result = await _signinManger.CheckPasswordSignInAsync(user, request.password, false);
             if (result.Succeeded)
             {
-                var tokenhandler = new JwtSecurityTokenHandler();
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Issuer = _jwtOptions.Issuer,
-                    Audience = _jwtOptions.Audiance,
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SigningKey))
-                    , SecurityAlgorithms.HmacSha256),
-                    Subject = new ClaimsIdentity(new Claim[]
-                    {
-                    new(ClaimTypes.NameIdentifier, request.username),
-                    new Claim("AppUserId", user.Id) })
-                };
-                var SecurityToken = tokenhandler.CreateToken(tokenDescriptor);
-                var accessToken = tokenhandler.WriteToken(SecurityToken);
-
-                return Ok(accessToken);
+                return Ok(_tokenProvider.CreateToken(user));
             }
             return Unauthorized("password");
         }
-
     }
+
 }

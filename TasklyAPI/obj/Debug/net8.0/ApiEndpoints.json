@@ -1,18 +1,8 @@
 [
   {
     "ContainingType": "TasklyAPI.Controllers.AuthController",
-    "Method": "getAllUsers",
-    "RelativePath": "api/Auth/GetAllUsers",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TasklyAPI.Controllers.AuthController",
     "Method": "Login",
-    "RelativePath": "api/Auth/login",
+    "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

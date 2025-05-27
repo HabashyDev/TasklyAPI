@@ -9,10 +9,10 @@ namespace Taskly.Core.Models
     public class JwtOptions
     {
         public string Issuer { get; set; }
-        public string Audiance { get; set; }
+        public string Audience { get; set; }
         public int LifeTime { get; set; }
-        public string SigningKey    { get; set; }
-        public string Role {  get; set; }
-        public string AppUserId { get; set; }
+        public string SigningKey  { get; set; }
+        public Guid AppUserId { get; set; }
+        
     }
 }

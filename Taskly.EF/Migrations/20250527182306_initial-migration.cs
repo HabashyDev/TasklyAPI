@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Taskly.EF.Migrations
 {
     /// <inheritdoc />
-    public partial class initialauthentication : Migration
+    public partial class initialmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -162,19 +162,19 @@ namespace Taskly.EF.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DeadLine = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ownerId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    DeadLine = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TasksTodo", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TasksTodo_AspNetUsers_ownerId",
-                        column: x => x.ownerId,
+                        name: "FK_TasksTodo_AspNetUsers_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -220,9 +220,9 @@ namespace Taskly.EF.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TasksTodo_ownerId",
+                name: "IX_TasksTodo_AppUserId",
                 table: "TasksTodo",
-                column: "ownerId");
+                column: "AppUserId");
         }
 
         /// <inheritdoc />

@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\extensions\\serviceextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Migrations\\20250527182306_initial-migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Taskly.EF\\Migrations\\20250527182306_initial-migration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.ef\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|solutionrelative:taskly.ef\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Migrations\\20250527182146_make-appuser-nullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Taskly.EF\\Migrations\\20250527182146_make-appuser-nullable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\models\\tasktodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\models\\tasktodo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\dtos\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\dtos\\taskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\extensions\\tokenprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\extensions\\tokenprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\models\\appuserrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\models\\appuserrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\tasklyapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{11B67712-6FFE-460F-A961-A312C0DBFB5A}|TasklyAPI\\TasklyAPI.csproj|solutionrelative:tasklyapi\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.ef\\taskly.ef.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{513D21A8-817A-4481-AB38-3F97AB9F9579}|Taskly.EF\\Taskly.EF.csproj|solutionrelative:taskly.ef\\taskly.ef.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|c:\\users\\mahmoud alhabashy\\source\\repos\\tasklyapi\\taskly.core\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{505E4BE4-C694-490C-B194-466362E7DC9B}|Taskly.Core\\Taskly.Core.csproj|solutionrelative:taskly.core\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,106 +62,132 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\IUnitOfWork.cs",
-              "RelativeDocumentMoniker": "Taskly.Core\\IUnitOfWork.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\IUnitOfWork.cs",
-              "RelativeToolTip": "Taskly.Core\\IUnitOfWork.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T02:10:10.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "TasklyAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\AuthController.cs*",
-              "RelativeToolTip": "TasklyAPI\\Controllers\\AuthController.cs*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T01:52:59.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Taskly.EF",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Taskly.EF.csproj",
-              "RelativeDocumentMoniker": "Taskly.EF\\Taskly.EF.csproj",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Taskly.EF.csproj",
-              "RelativeToolTip": "Taskly.EF\\Taskly.EF.csproj",
+              "DocumentIndex": 2,
+              "Title": "20250527182306_initial-migration.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Migrations\\20250527182306_initial-migration.cs",
+              "RelativeDocumentMoniker": "Taskly.EF\\Migrations\\20250527182306_initial-migration.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Migrations\\20250527182306_initial-migration.cs",
+              "RelativeToolTip": "Taskly.EF\\Migrations\\20250527182306_initial-migration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-01T01:52:36.444Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T18:23:06.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20250527182146_make-appuser-nullable.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Migrations\\20250527182146_make-appuser-nullable.cs",
+              "RelativeDocumentMoniker": "Taskly.EF\\Migrations\\20250527182146_make-appuser-nullable.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\Migrations\\20250527182146_make-appuser-nullable.cs",
+              "RelativeToolTip": "Taskly.EF\\Migrations\\20250527182146_make-appuser-nullable.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T18:21:46.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ServiceExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Extensions\\ServiceExtensions.cs",
-              "RelativeDocumentMoniker": "TasklyAPI\\Extensions\\ServiceExtensions.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Extensions\\ServiceExtensions.cs",
-              "RelativeToolTip": "TasklyAPI\\Extensions\\ServiceExtensions.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDoAAAAQAAAAAAAAAA==",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "TasklyAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "TasklyAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAwDwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T01:49:33.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Program.cs",
-              "RelativeDocumentMoniker": "TasklyAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Program.cs",
-              "RelativeToolTip": "TasklyAPI\\Program.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T21:57:28.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "Taskly.EF\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.EF\\UnitOfWork.cs",
-              "RelativeToolTip": "Taskly.EF\\UnitOfWork.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T02:19:10.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppUserRole.cs",
-              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\AppUserRole.cs",
-              "RelativeDocumentMoniker": "Taskly.Core\\Models\\AppUserRole.cs",
-              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\AppUserRole.cs",
-              "RelativeToolTip": "Taskly.Core\\Models\\AppUserRole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T01:59:06.337Z",
+              "WhenOpened": "2025-05-27T15:19:00.389Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "TokenProvider.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Extensions\\TokenProvider.cs",
+              "RelativeDocumentMoniker": "TasklyAPI\\Extensions\\TokenProvider.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Extensions\\TokenProvider.cs",
+              "RelativeToolTip": "TasklyAPI\\Extensions\\TokenProvider.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T16:40:39.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "TasksController.cs",
               "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\TasksController.cs",
               "RelativeDocumentMoniker": "TasklyAPI\\Controllers\\TasksController.cs",
               "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Controllers\\TasksController.cs",
               "RelativeToolTip": "TasklyAPI\\Controllers\\TasksController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwCwAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA0wDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T02:20:31.324Z",
+              "WhenOpened": "2025-05-27T15:14:44.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TaskDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\DTOs\\TaskDTO.cs",
+              "RelativeDocumentMoniker": "Taskly.Core\\DTOs\\TaskDTO.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\DTOs\\TaskDTO.cs",
+              "RelativeToolTip": "Taskly.Core\\DTOs\\TaskDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T17:34:55.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskTodo.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\TaskTodo.cs",
+              "RelativeDocumentMoniker": "Taskly.Core\\Models\\TaskTodo.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\Models\\TaskTodo.cs",
+              "RelativeToolTip": "Taskly.Core\\Models\\TaskTodo.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T15:12:12.742Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "Taskly.Core\\DTOs\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\Taskly.Core\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "Taskly.Core\\DTOs\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T15:43:14.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "TasklyAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\appsettings.json",
+              "RelativeToolTip": "TasklyAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-27T15:16:56.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Program.cs",
+              "RelativeDocumentMoniker": "TasklyAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Mahmoud ALHabashy\\source\\repos\\TasklyAPI\\TasklyAPI\\Program.cs",
+              "RelativeToolTip": "TasklyAPI\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAwwBQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T15:32:51.476Z",
               "EditorCaption": ""
             }
           ]

@@ -13,7 +13,6 @@ namespace Taskly.Core.DTOs
         public string TaskTitle { get; set; }
         public string TaskDescription { get; set; }
         public DateTime TaskDeadLine { get; set; } = DateTime.UtcNow.AddDays(1);
-
         public TaskTodoStaus TaskStatus { get; set; } = TaskTodoStaus.pending;
 
         

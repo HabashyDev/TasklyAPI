@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using Taskly.Core;
 using Taskly.Core.DTOs;
 using Taskly.Core.Enums;
@@ -10,46 +13,74 @@ namespace TasklyAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class TasksController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IHttpContextAccessor _httpContextAccessor;
-        public TasksController(IUnitOfWork unitOfWork , IHttpContextAccessor httpContextAccessor)
+        private readonly UserManager<AppUser> _usermanger;
+
+        public TasksController(IUnitOfWork unitOfWork,UserManager<AppUser> userManager)
         {
+            
             _unitOfWork = unitOfWork;
-            _httpContextAccessor = httpContextAccessor;
+            _usermanger = userManager;
+
         }
+
+
         [HttpPost("CreateTask")]
-        [Authorize]
-        public IActionResult CreateTask(TaskDTO Request)
+        public async Task<IActionResult> CreateTask(TaskDTO Request)
         {
-            var CurrentUser = _httpContextAccessor.HttpContext?.User;
-            TaskTodo Task = new()
+            // Get the current user's ID from claims
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Check if user is authenticated
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized("User not authenticated");
+            }
+
+            TaskTodo task = new()
             {
                 Title = Request.TaskTitle,
                 Description = Request.TaskDescription,
                 DeadLine = Request.TaskDeadLine,
-                ownerId = CurrentUser.FindFirst("AppUserId").Value,
-                Status = Request.TaskStatus
-                
+                Status = Request.TaskStatus,
+                AppUserId = userId
             };
-            _unitOfWork.TasksToDo.Create(Task);
-            _unitOfWork.complete();
-            return Created();
+
+            _unitOfWork.TasksToDo.Create(task);
+            _unitOfWork.complete(); 
+
+            // Return Created with the created resource
+            return CreatedAtAction(nameof(GetTaskById), new { id = task.Id }, task);
         }
 
+
         [HttpGet("getAllTasks")]
-        public IActionResult GetAllTasks()
+        public async Task<IActionResult> GetAllTasks()
         {
-            var CurrentUser = _httpContextAccessor.HttpContext?.User;
-            var AllUserTasks = _unitOfWork.TasksToDo.getAll();
-                //.Where(T => T.ownerId == CurrentUser.FindFirst("AppUserId").Value);
-            return Ok(AllUserTasks);
+            // Get the current user's ID from claims
+            var currentUserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // Check if user is authenticated
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Unauthorized("User not authenticated");
+            }
+
+            // Filter tasks for the current user
+            var userTasks = _unitOfWork.TasksToDo.getAll()
+                .Where(t => t.AppUserId == currentUserId)
+                .ToList(); // Execute the query
+
+
+            return Ok(userTasks);
         }
+
 
 
         [HttpPut("UpdateTask")]
-        [Authorize]
         public IActionResult UpdateTask(TaskTodo request)
         {
             var UpdatedTask = _unitOfWork.TasksToDo.Update(request);
@@ -58,7 +89,6 @@ namespace TasklyAPI.Controllers
         }
 
         [HttpDelete("DeleteTaskById {id:int}")]
-        [Authorize]
         public IActionResult DeleteTask(int id)
         {
             _unitOfWork.TasksToDo.DeleteById(T => T.Id == id);
@@ -67,19 +97,12 @@ namespace TasklyAPI.Controllers
         }
 
         [HttpGet("getTaskByStatus")]
-        [Authorize]
         public IActionResult GetTaskById(TaskTodoStaus Status)
         {
-            var CurrentUser = _httpContextAccessor.HttpContext?.User;
 
-            var userTasks = _unitOfWork.TasksToDo.getAll().Where(T => T.ownerId == CurrentUser.FindFirst("AppUserId").Value);
-
+            var userTasks = _unitOfWork.TasksToDo.getAll().Where(T => T.AppUserId == User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var Response = userTasks.Where(T => T.Status == Status);
-                            
-            
             return Ok(Response);
         }
-
-
     }
 }

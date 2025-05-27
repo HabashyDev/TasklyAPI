@@ -12,8 +12,8 @@ using Taskly.EF;
 namespace Taskly.EF.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250429021016_initial-authentication")]
-    partial class initialauthentication
+    [Migration("20250527182306_initial-migration")]
+    partial class initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,6 +231,10 @@ namespace Taskly.EF.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("AppUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -247,13 +251,9 @@ namespace Taskly.EF.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ownerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ownerId");
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("TasksTodo");
                 });
@@ -311,13 +311,18 @@ namespace Taskly.EF.Migrations
 
             modelBuilder.Entity("Taskly.Core.Models.TaskTodo", b =>
                 {
-                    b.HasOne("Taskly.Core.Models.AppUser", "owner")
-                        .WithMany()
-                        .HasForeignKey("ownerId")
+                    b.HasOne("Taskly.Core.Models.AppUser", "AppUser")
+                        .WithMany("TasksToDo")
+                        .HasForeignKey("AppUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("owner");
+                    b.Navigation("AppUser");
+                });
+
+            modelBuilder.Entity("Taskly.Core.Models.AppUser", b =>
+                {
+                    b.Navigation("TasksToDo");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,6 +1,7 @@
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\bin\Debug\net8.0\Taskly.Core.deps.json
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\bin\Debug\net8.0\Taskly.Core.dll
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\bin\Debug\net8.0\Taskly.Core.pdb
+C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\Taskly.Core.csproj.AssemblyReference.cache
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\Taskly.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\Taskly.Core.AssemblyInfoInputs.cache
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\Taskly.Core.AssemblyInfo.cs
@@ -10,4 +11,3 @@ C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\T
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\refint\Taskly.Core.dll
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\Taskly.Core.pdb
 C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\ref\Taskly.Core.dll
-C:\Users\Mahmoud ALHabashy\source\repos\TasklyAPI\Taskly.Core\obj\Debug\net8.0\Taskly.Core.csproj.AssemblyReference.cache
